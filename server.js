@@ -10,9 +10,9 @@ app.use(express.urlencoded({ extended: true }));
 
 mongoose
   .connect(
-    "mongodb+srv://ys8048885_db_user:s6WnWw5xj8ovhn8F@cluster0.j6l6ecd.mongodb.net/",
+    process.env.MONGO_URI,
     {
-      dbName: "Url_Shortener",
+      dbName: process.env.DB_NAME,
     }
   )
   .then(() => console.log("MongoDB Connected..!"))
